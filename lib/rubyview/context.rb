@@ -12,6 +12,7 @@ class RubyView
       template_path = File.join(Dir.pwd, path_to_template)
       template_content = File.read(template_path)
       instance_eval(template_content)
+      @_rendered_content
     end
   end
 end

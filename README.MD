@@ -26,3 +26,6 @@ RubyView.render("hello.rb")
 You will see the following html be rendered
 
 `<h1>Hello World!</h1>`
+
+Example:
+
