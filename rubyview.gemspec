@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "rubyview"
-  s.version     = "0.0.1"
+  s.version     = "0.0.2"
   s.summary     = "A ruby based templating language"
   s.description = "Write your views with pure ruby"
   s.authors     = ["Indigo Tech"]
@@ -14,4 +14,5 @@ Gem::Specification.new do |s|
     "https://rubygems.org/gems/rubyview"
   s.license       = "MIT"
   s.add_dependency "thor"
+  s.metadata['source_code_uri'] = 'https://github.com/indigotechtutorials/rubyview'
 end

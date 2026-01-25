@@ -27,5 +27,26 @@ You will see the following html be rendered
 
 `<h1>Hello World!</h1>`
 
-Example:
+### Syntax
 
+There are two correct ways to write rubyview code. 1 is using the html tag names directly this means you can directly write the html tags in ruby.
+
+```ruby
+h1 "Hello world!"
+p  "say whats up"
+```
+
+The other way is to use the custom DSL I built to abstract away from regular html tag names to other rememberable names.
+
+```ruby
+header "Hello world!"
+text  "say whats up"
+```
+
+Here is a full list of the custom DSL names mapped to the corresponding html tag
+
+| DSL Method | HTML Method |
+|------------|-------------|
+| header     | h1          |
+| text       | p           |
+| container  | div         |

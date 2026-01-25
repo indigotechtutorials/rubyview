@@ -1,20 +1,16 @@
 class RubyView
   module Helpers
     module Tag
-      def h1(content, **html_opts)
-        generate_tag(:h1, content, **html_opts)
-      end
+      def h1(...); render_tag(:h1, ...); end;
+      def p(...); render_tag(:p, ...); end;
+      def div(...); render_tag(:div, ...); end;
 
-      def p(content, **html_opts)
-        generate_tag(:p, content, **html_opts)
+      def render_tag(...) # for storing to rendered content variable.
+        @_rendered_content += generate_tag(...)
       end
-
-      # Responsible for assembling HTML tag ( also for storing to rendered content variable. )
-      def generate_tag(name, content, **html_opts)
-        formatted_html_opts = format_html_opts(**html_opts)
-        _gen_html = "<#{name}#{formatted_html_opts}>#{content}</#{name}>"
-        @_rendered_content += _gen_html
-        _gen_html
+      
+      def generate_tag(name, content, **html_opts) # for assembling HTML tag
+        "<#{name}#{format_html_opts(**html_opts)}>#{content}</#{name}>"
       end
 
       def format_html_opts(**html_opts)
@@ -24,3 +20,4 @@ class RubyView
     end
   end
 end
+
