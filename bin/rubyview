@@ -1,0 +1,11 @@
+require 'rubyview'
+require 'thor'
+
+class RubyViewCLI < Thor
+  desc "render TEMPLATE_PATH", "renders a ruby view template to html"
+  def render(template_path)
+    puts RubyView.render(template_path)
+  end
+end
+
+RubyViewCLI.start(ARGV)
