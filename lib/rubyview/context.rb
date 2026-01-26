@@ -3,7 +3,7 @@
 
 class RubyView
   class Context
-    include RubyView::Helpers::Tag, DSL
+    include RubyView::Helpers::Tag, DSL, Helpers
     def initialize
     end
 

@@ -61,3 +61,31 @@ example: `app/views/pages/home.view`
 header "Hello Ruby on Rails!"
 text "This is rendered with RubyView"
 ```
+
+### Custom helpers
+
+To take things further you can define your own helper methods that allow you to render a component with custom classes included. 
+
+To do this you can use the RubyView.add_helper_method function. To do this in rails you can create a rubyview initializer file: `config/initializers/rubyview.rb` 
+
+```ruby
+RubyView.add_helper_method :vertical do |content = '', **html_opts, &block|
+  custom_classes = 'flex flex-col'
+  html_opts[:class] = merge_classes(html_opts[:class], custom_classes)
+  div(content, **html_opts, &block)
+end
+```
+
+Now in your code you can use the helper vertical for styling content with flex column plus any additional options.
+
+The `merge_classes` method is provided for convenience to allow you to add combine two class strings to allow additional classes along with the default ones.
+
+Inside of your custom method you have all of the methods from RubyView available to you. All of the html tags, rubyview DSL helpers and others.
+
+One helpful function is the format_html_opts which converts an object of key value pairs into html tag options for example
+
+format_html_opts({ class: "class-1 class-2", id: "element-1" })
+=> class="class-1 class-2" id="element-1"
+
+This is automatically done when passing in options to a helper like container/div
+

@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = "rubyview"
-  s.version     = "0.0.3"
+  s.version     = "0.0.4"
   s.summary     = "A ruby based templating language"
   s.description = "Write your views with pure ruby"
   s.authors     = ["Indigo Tech"]
