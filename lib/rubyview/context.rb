@@ -7,10 +7,15 @@ class RubyView
     def initialize
     end
 
-    def call(path_to_template)
+    def call(file_path: nil, code: nil)
+      return puts 'you must pass in file path or code to func' if !file_path && !code
       @_rendered_content = ""
-      template_path = File.join(Dir.pwd, path_to_template)
-      template_content = File.read(template_path)
+      template_content = if file_path
+        template_path = File.join(Dir.pwd, path_to_template)
+        File.read(template_path)
+      else
+        code
+      end
       instance_eval(template_content)
       @_rendered_content
     end

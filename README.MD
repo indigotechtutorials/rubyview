@@ -50,3 +50,14 @@ Here is a full list of the custom DSL names mapped to the corresponding html tag
 | header     | h1          |
 | text       | p           |
 | container  | div         |
+
+### Ruby on Rails
+
+Works out of the box with Rails just add the gem to your app and then change your file extensions from `.html.erb` to `.view` 
+
+example: `app/views/pages/home.view`
+
+```ruby
+header "Hello Ruby on Rails!"
+text "This is rendered with RubyView"
+```
