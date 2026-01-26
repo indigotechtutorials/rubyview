@@ -75,7 +75,7 @@ container do
 end
 ```
 
-Known Bug: As of now you must wrap your form_with in a container or else it will remove all the other elements in the parent container. Not sure why for now something with Rails will look into later. TODO[1]
+Known Bug: As of now you must wrap your form_with in a container or else it will remove all the other elements in the parent container. Not sure why for now something with Rails will look into later. Also text area is not being rendered so this is a big challenge I need to fix next to get form helpers working possible just creating my own methods... TODO[1]
 
 ### Custom helpers
 
