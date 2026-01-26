@@ -62,6 +62,21 @@ header "Hello Ruby on Rails!"
 text "This is rendered with RubyView"
 ```
 
+The form helpers are available allowing you to write form code inside rubyview templates
+
+```ruby
+container do
+  form_with url: "/comments" do |f|
+    container class: "p-4 mb-4" do
+      f.text_area :body
+    end
+    f.submit "Send comment"
+  end
+end
+```
+
+Known Bug: As of now you must wrap your form_with in a container or else it will remove all the other elements in the parent container. Not sure why for now something with Rails will look into later. TODO[1]
+
 ### Custom helpers
 
 To take things further you can define your own helper methods that allow you to render a component with custom classes included. 

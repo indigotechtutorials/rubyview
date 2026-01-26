@@ -9,9 +9,10 @@ class RubyView
     context.call(file_path: path_to_template)
   end
 
-  def self.evaluate(code)
+  def self.evaluate(code, **opts)
     context = RubyView::Context.new
-    context.call(code: code)
+    _results = context.call(code: code)
+    _results.dump if opts[:dump]
   end
 
   def self.add_helper_method(name, &block)
