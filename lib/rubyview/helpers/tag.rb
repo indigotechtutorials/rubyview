@@ -18,7 +18,7 @@ class RubyView
       end
 
       def render_tag(...) # for storing to rendered content variable.
-        @_rendered_content += generate_tag(...)
+        concat(generate_tag(...))
       end
       
       def generate_tag(name, content = nil, **html_opts, &block) # for assembling HTML tag

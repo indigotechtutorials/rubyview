@@ -7,7 +7,6 @@ class RubyViewCLI < Thor
     puts RubyView.render(template_path)
   end
 
-  # TODO: Add -d to return as dump (pass in dump: true)
   desc "eval CODE", "evaluates rubyview code and converts to html"
   def eval(code)
     puts RubyView.evaluate(code)

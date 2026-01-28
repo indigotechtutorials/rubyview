@@ -1,6 +1,8 @@
 require "pry"
 require_relative './rubyview/helpers/tag'
 require_relative './rubyview/dsl'
+require_relative './rubyview/buffering'
+require_relative './rubyview/rails_buffering'
 require_relative './rubyview/context'
 
 class RubyView
@@ -9,10 +11,10 @@ class RubyView
     context.call(file_path: path_to_template)
   end
 
-  def self.evaluate(code, **opts)
+  def self.evaluate(code)
     context = RubyView::Context.new
-    _results = context.call(code: code)
-    _results.dump if opts[:dump]
+    context.call(code: code)
+    context.output_buffer
   end
 
   def self.add_helper_method(name, &block)
