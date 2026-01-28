@@ -4,7 +4,6 @@
 class RubyView
   class Context
     include RubyView::Helpers::Tag, DSL, Helpers
-    include ActionView::Helpers::FormHelper if defined?(Rails)
 
     def initialize
     end
